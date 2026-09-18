@@ -1,5 +1,7 @@
 // Base de Dados Pré-carregada para o Sistema de Reúso de Requisitos Baseado em Ontologias (Codinome O)
 
+const GITHUB_BASE = 'https://github.com/Umhenrique/MVP_O_Reuso/blob/main/docs';
+
 export const ONTOLOGY_TAXONOMIES = [
   {
     id: 'dominio',
@@ -92,7 +94,7 @@ export const INITIAL_PROJECTS = [
     compliance: ['PCI-DSS (Segurança em Cartões)', 'LGPD / Regulamentação de Privacidade', 'Autenticação MFA & OAuth2 / OIDC', 'Audit Trail / Logs Imutáveis de Auditoria'],
     features: ['Processamento de Pagamento & Gateway', 'Gestão de Usuários e Permissões (RBAC)', 'Checkout Completo & Carrinho'],
     qualityAttr: ['Alta Disponibilidade (SLA 99.99%)', 'Tempo de Resposta < 200ms', 'Rate Limiting & Proteção Anti-DDoS'],
-    originPath: 'https://github.com/fintech-corp/payflux-core/blob/main/docs/requirements-srd.md',
+    originPath: `${GITHUB_BASE}/payflux-srd.md`,
     createdAt: '2025-11-10'
   },
   {
@@ -105,7 +107,7 @@ export const INITIAL_PROJECTS = [
     compliance: ['LGPD / Regulamentação de Privacidade', 'Autenticação MFA & OAuth2 / OIDC', 'Audit Trail / Logs Imutáveis de Auditoria', 'Criptografia End-to-End'],
     features: ['Gestão de Usuários e Permissões (RBAC)', 'Relatórios e Dashboards Analytics', 'Notificações Push / E-mail / SMS', 'Gestão de Arquivos & Upload Seguro'],
     qualityAttr: ['Alta Disponibilidade (SLA 99.99%)'],
-    originPath: 'https://gitlab.org/medicare-health/portal/docs/Requisitos_Sistema_Health.pdf',
+    originPath: `${GITHUB_BASE}/medicare-srd.md`,
     createdAt: '2026-01-15'
   },
   {
@@ -118,7 +120,7 @@ export const INITIAL_PROJECTS = [
     compliance: ['LGPD / Regulamentação de Privacidade', 'PCI-DSS (Segurança em Cartões)'],
     features: ['Checkout Completo & Carrinho', 'Processamento de Pagamento & Gateway', 'Notificações Push / E-mail / SMS', 'Relatórios e Dashboards Analytics'],
     qualityAttr: ['Tempo de Resposta < 200ms', 'Escalabilidade Horizontal Automática'],
-    originPath: 'https://jira.omnishop.com/browse/OMNI-REQ-DOC-2026',
+    originPath: `${GITHUB_BASE}/omnishop-srd.md`,
     createdAt: '2026-03-22'
   },
   {
@@ -131,7 +133,7 @@ export const INITIAL_PROJECTS = [
     compliance: ['ISO 27001', 'Audit Trail / Logs Imutáveis de Auditoria'],
     features: ['Gestão de Usuários e Permissões (RBAC)', 'Relatórios e Dashboards Analytics'],
     qualityAttr: ['Escalabilidade Horizontal Automática', 'Tolerância a Falhas & Redundância'],
-    originPath: 'https://confluence.logispeed.io/spaces/ARCH/pages/884920/EspecificacaoRequisitos',
+    originPath: `${GITHUB_BASE}/logispeed-srd.md`,
     createdAt: '2026-04-05'
   }
 ];
@@ -149,7 +151,7 @@ export const INITIAL_REQUIREMENTS = [
       'Bloqueio temporário da conta após 5 tentativas incorretas consecutivas.'
     ],
     originProject: 'PayFlux Gateway',
-    originPath: 'https://github.com/fintech-corp/payflux-core/blob/main/docs/requirements-srd.md#REQ-AUTH-001',
+    originPath: `${GITHUB_BASE}/payflux-srd.md#req-auth-001---autentica%C3%A7%C3%A3o-multifator-mfa-via-totp--oauth2`,
     ontologyTags: [
       'Autenticação MFA & OAuth2 / OIDC',
       'Fintech / Serviços Financeiros',
@@ -172,7 +174,7 @@ export const INITIAL_REQUIREMENTS = [
       'Interface de consulta para auditoria com filtros por período, usuário e tipo de ação.'
     ],
     originProject: 'MediCare Portal',
-    originPath: 'https://gitlab.org/medicare-health/portal/docs/Requisitos_Sistema_Health.pdf#REQ-AUD-002',
+    originPath: `${GITHUB_BASE}/medicare-srd.md#req-aud-002---registro-de-trilha-de-auditoria-imut%C3%A1vel-audit-trail`,
     ontologyTags: [
       'Audit Trail / Logs Imutáveis de Auditoria',
       'LGPD / Regulamentação de Privacidade',
@@ -190,12 +192,12 @@ export const INITIAL_REQUIREMENTS = [
     category: 'Pagamento & Finanças',
     description: 'O sistema deve integrar-se com adquirentes e gateways de pagamento para autorização, captura e estorno de pagamentos via Cartão de Crédito, Pix e Boleto Bancário, garantindo idempotência em cada transação através de chaves únicas.',
     acceptanceCriteria: [
-      'Suporte ao envio de chave de idempotência HTTP `X-Idempotency-Key`.',
+      'Suporte ao envio de chave de idempotência HTTP X-Idempotency-Key.',
       'Processamento síncrono com retorno de status em menos de 2 segundos.',
       'Webhook assíncrono seguro para confirmação de pagamento Pix e Boleto.'
     ],
     originProject: 'PayFlux Gateway',
-    originPath: 'https://github.com/fintech-corp/payflux-core/blob/main/docs/requirements-srd.md#REQ-PAY-003',
+    originPath: `${GITHUB_BASE}/payflux-srd.md#req-pay-003---integra%C3%A7%C3%A3o-de-processamento-de-pagamento-transacional`,
     ontologyTags: [
       'Processamento de Pagamento & Gateway',
       'Fintech / Serviços Financeiros',
@@ -219,7 +221,7 @@ export const INITIAL_REQUIREMENTS = [
       'Envio de e-mail de confirmação da exclusão em até 15 dias úteis conforme exigido pela ANPD.'
     ],
     originProject: 'MediCare Portal',
-    originPath: 'https://gitlab.org/medicare-health/portal/docs/Requisitos_Sistema_Health.pdf#REQ-PRIV-004',
+    originPath: `${GITHUB_BASE}/medicare-srd.md#req-priv-004---gest%C3%A3o-de-consentimento-e-direito-ao-esquecimento-lgpd`,
     ontologyTags: [
       'LGPD / Regulamentação de Privacidade',
       'Saúde / HealthTech',
@@ -240,7 +242,7 @@ export const INITIAL_REQUIREMENTS = [
       'Fallback automático para o banco de dados relacional caso a camada de cache fique indisponível.'
     ],
     originProject: 'OmniShop E-Commerce',
-    originPath: 'https://jira.omnishop.com/browse/OMNI-REQ-DOC-2026#REQ-PERF-005',
+    originPath: `${GITHUB_BASE}/omnishop-srd.md#req-perf-005---desempenho-de-leitura-em-alta-carga-cache-distribu%C3%ADdo`,
     ontologyTags: [
       'Tempo de Resposta < 200ms',
       'Redis',
@@ -258,11 +260,11 @@ export const INITIAL_REQUIREMENTS = [
     category: 'Segurança & Infraestrutura',
     description: 'O sistema deve aplicar limites de taxa de requisição por IP e Token de API (máximo 100 requisições por minuto por cliente em endpoints de escrita) para mitigar potenciais ataques de negação de serviço (DDoS) e abuso de API.',
     acceptanceCriteria: [
-      'Retorno do código HTTP `429 Too Many Requests` com cabeçalho `Retry-After`.',
+      'Retorno do código HTTP 429 Too Many Requests com cabeçalho Retry-After.',
       'Configuração de regras dinâmicas por rota através de WAF ou Gateway de API.'
     ],
     originProject: 'PayFlux Gateway',
-    originPath: 'https://github.com/fintech-corp/payflux-core/blob/main/docs/requirements-srd.md#REQ-SEC-006',
+    originPath: `${GITHUB_BASE}/payflux-srd.md#req-sec-006---prote%C3%A7%C3%A3o-contra-rate-limiting-e-ataques-de-nega%C3%A7%C3%A3o-de-servi%C3%A7o-ddos`,
     ontologyTags: [
       'Rate Limiting & Proteção Anti-DDoS',
       'Microserviços',
@@ -284,7 +286,7 @@ export const INITIAL_REQUIREMENTS = [
       'Suporte a templates parametrizáveis em HTML para e-mails institucionais.'
     ],
     originProject: 'OmniShop E-Commerce',
-    originPath: 'https://jira.omnishop.com/browse/OMNI-REQ-DOC-2026#REQ-NOT-007',
+    originPath: `${GITHUB_BASE}/omnishop-srd.md#req-not-007---notifica%C3%A7%C3%B5es-multicanal-ass%C3%ADncronas-pushe-mailsms`,
     ontologyTags: [
       'Notificações Push / E-mail / SMS',
       'Apache Kafka',
@@ -306,7 +308,7 @@ export const INITIAL_REQUIREMENTS = [
       'Desprovisionamento gradual (scale-down cooldown) de 10 minutos para evitar oscilações.'
     ],
     originProject: 'LogiSpeed ERP',
-    originPath: 'https://confluence.logispeed.io/spaces/ARCH/pages/884920/EspecificacaoRequisitos#REQ-SCAL-008',
+    originPath: `${GITHUB_BASE}/logispeed-srd.md#req-scal-008---auto-scaling-horizontal-orientado-a-m%C3%A9tricas-de-cpu-e-fila`,
     ontologyTags: [
       'Escalabilidade Horizontal Automática',
       'Docker / Kubernetes',

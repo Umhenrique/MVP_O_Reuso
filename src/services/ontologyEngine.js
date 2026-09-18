@@ -2,9 +2,9 @@
 import { INITIAL_PROJECTS, INITIAL_REQUIREMENTS, ONTOLOGY_TAXONOMIES } from './mockData';
 
 const STORAGE_KEYS = {
-  PROJECTS: 'codinome_o_projects',
-  REQUIREMENTS: 'codinome_o_requirements',
-  TAXONOMIES: 'codinome_o_taxonomies'
+  PROJECTS: 'codinome_o_projects_v2',
+  REQUIREMENTS: 'codinome_o_requirements_v2',
+  TAXONOMIES: 'codinome_o_taxonomies_v2'
 };
 
 /**
